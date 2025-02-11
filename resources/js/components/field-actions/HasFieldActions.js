@@ -14,7 +14,15 @@ export default {
         },
 
         internalFieldActions() {
-            return [];
+            return [
+                {
+                    title: 'Revert to Default',
+                    run: ({ config, update }) => {
+                        update(config.default);
+                    },
+                    visible: this.config.default,
+                }
+            ];
         },
 
         fieldActionPayload() {
